@@ -1,5 +1,12 @@
 <!doctype html>
 <html lang="en">
+  <body>
+    <!-- <h2>My Map</h2> -->
+    <div id="map" class="mf"></div>
+    
+  </body>
+
+
   <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.3.0/ol.css">
     <style>
@@ -10,15 +17,9 @@
         width: 100%;
       }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js"></script> 
     <title>影像底图</title>
-  </head>
- 
-  <body>
-    <!-- <h2>My Map</h2> -->
-    <div id="map" class="mf"></div>
+    <script src="https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js"></script> 
     <script>
-
       var google_img = new ol.layer.Tile({
         name: "谷歌影像图",
         source: new ol.source.XYZ({
@@ -47,6 +48,11 @@
         })
       });
     </script>
-  </body>
+  </head>
+
+  
+ 
+  
+
 </html>
 
