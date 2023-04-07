@@ -14,9 +14,9 @@
         width: 100%;
       }
       #titleDiv {
-        font-weight: 400;
-        font-style: normal;
-        font-size: 12px;
+        /* font-weight: 0; */
+        /* font-style: normal; */
+        font-size: 100%;
         padding: 5px;
         position: absolute;
         top: 10px;
@@ -77,7 +77,8 @@
 
       var rotateControl = new ol.control.Rotate({
         autoHide: false, // 是否自动隐藏控件
-        target: 'rotateControl'
+        target: 'rotateControl',
+        tipLabel: "重置旋转"
       });
       map.addControl(rotateControl);
       
