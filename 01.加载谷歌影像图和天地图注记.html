@@ -1,14 +1,13 @@
 <!doctype html>
 <html lang="en">
-  <body>
-    <!-- <h2>My Map</h2> -->
-    <div id="map" class="mf"></div>
-    
-  </body>
+  
 
 
   <head>
+    <meta charset="UTF-8">
+    <title>影像底图</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.3.0/ol.css">
+    
     <style>
       #map {
         padding: 0;
@@ -16,9 +15,28 @@
         height: 700px;
         width: 100%;
       }
+      #titleDiv {
+        font-weight: 400;
+        font-style: normal;
+        font-size: 12px;
+        padding: 5px;
+      }
     </style>
-    <title>影像底图</title>
+
+    <body>
+      <!-- <h2>My Map</h2> -->
+      <div id="map" class="map">
+        <div id="viewDiv">
+          <div id="titleDiv" class="esri-widget">
+            制作：zyc | 微信公众号：
+            <a class="weixin__link esri-widget__anchor" href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=Mzg2MDg2MTY0NA==&scene=124#wechat_redirect" target="_blank" rel="noreferrer">学学GIS</a>
+          </div>
+        </div>
+      </div>      
+    </body>
+    
     <script src="https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js"></script> 
+    
     <script>
       var google_img = new ol.layer.Tile({
         name: "谷歌影像图",
@@ -47,6 +65,8 @@
           zoom: 15
         })
       });
+
+      const titleDiv = document.getElementById("titleDiv");
     </script>
   </head>
 
