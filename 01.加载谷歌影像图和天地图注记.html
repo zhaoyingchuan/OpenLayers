@@ -21,14 +21,18 @@
         position: absolute;
         top: 10px;
         right: 10px;
-        background-color: white;
+        background-color: white;      
+      }
+      .ol-rotate-reset{
+        position: absolute;
+        top: 30px;
+        left: 8px;
       }
     </style>
 
     <body>
-      <div id="mf" class="mf">        
-        
-      </div>
+      <div id="mf" class="mf"></div>
+      <div id="rotateControl" class="ol-rotate-reset"></div>
       <div id="titleDiv">
         制作：zyc | 微信公众号：
         <a class="weixin__link" href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=Mzg2MDg2MTY0NA==&scene=124#wechat_redirect" target="_blank" rel="noreferrer">学学GIS</a>
@@ -54,6 +58,11 @@
         })
       });
 
+      // const ro = new ol.Control.Rotate({
+      //   autoHide: 1,
+
+      // })
+
       var map = new ol.Map({
         target: 'mf',
         layers: [          
@@ -62,9 +71,16 @@
         ],
         view: new ol.View({
           center: ol.proj.transform([116.027, 28.683], 'EPSG:4326', 'EPSG:3857'),
-          zoom: 15
-        })
+          zoom: 15,
+        }),
       });
+
+      var rotateControl = new ol.control.Rotate({
+        autoHide: false, // 是否自动隐藏控件
+        target: 'rotateControl'
+      });
+      map.addControl(rotateControl);
+      
     </script>
   </head>
 

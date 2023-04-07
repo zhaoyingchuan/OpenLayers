@@ -1,29 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<meta charset=utf-8 />
-<title>Title</title>
-<!--[if IE]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-<style>
-.parent {
-  width: 100%;
-  height: 100%;
-}
-.element {
-  width: 50%;
-  height: 50%;
-  background-color: red;
-}
-</style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>OpenLayers</title>
+  <link href="lib/ol/ol.css" rel="stylesheet" />
+  <script src="lib/ol/ol.js"></script>
 </head>
+
 <body>
-  
-<div class="parent">
-    <div class="element"></div>
-</div>
-  
-</body> 
+  <div id="map" style="width:400px;height:400px;"></div>
+  <script>var map = new ol.Map({ target: 'map', layers: [new ol.layer.Tile({ source: new ol.source.OSM() })], view: new ol.View({ projection: 'EPSG:4326', center: [120, 30], zoom: 10 }), controls: ol.control.defaults().extend([new ol.control.Rotate({ autoHide: false })]) })</script>
+</body>
+
 </html>
