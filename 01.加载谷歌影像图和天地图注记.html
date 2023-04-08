@@ -19,21 +19,24 @@
     #titleDiv {
       /* font-weight: 0; */
       /* font-style: normal; */
-      font-size: 1em;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 12px;
       padding: 5px;
       position: absolute;
-      top: 0.5em;
-      right: 0.5em;
+      top: 1em;
+      right: 1em;
       background-color: white;
     }
 
     .ol-rotate {
       position: absolute;
-      top: 60px;
-      left: 50px;
-      /* padding: 5px; */
-      /* transform-origin: bottom left; */
+      top: 3em;
+      right: 1em;
+      /* margin: 5px; */
     }
+
+    
   </style>
 
 <body>
@@ -69,15 +72,9 @@
     })
   });
 
-  // const ro = new ol.Control.Rotate({
-  //   autoHide: 1,
-
-  // })
-
   var view = new ol.View({
-    center: ol.proj.transform([116.027, 28.683], 'EPSG:4326', 'EPSG:3857'),
+    center: ol.proj.fromLonLat([116.027, 28.683]),
     zoom: 15,
-    rotation: 0,
   });
 
   var map = new ol.Map({
