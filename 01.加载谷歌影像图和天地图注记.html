@@ -30,7 +30,7 @@
     .ol-rotate {
       position: absolute;
       top: 60px;
-      left: 8px;
+      left: 50px;
       /* padding: 5px; */
       /* transform-origin: bottom left; */
     }
@@ -39,10 +39,10 @@
 <body>
   <div id="mf" class="mf"></div>
   <!-- <div id="rotateControl" class="ol-rotate-reset"></div> -->
-  <!-- <div id="titleDiv">
-        制作：zyc | 微信公众号：
-        <a class="weixin__link" href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=Mzg2MDg2MTY0NA==&scene=124#wechat_redirect" target="_blank" rel="noreferrer">学学GIS</a>
-      </div> -->
+  <div id="titleDiv">
+    制作：zyc | 微信公众号：
+    <a class="weixin__link" href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=Mzg2MDg2MTY0NA==&scene=124#wechat_redirect" target="_blank" rel="noreferrer">学学GIS</a>
+  </div>
   <!-- <div style="pointer-events: auto;" class="ol-rotate ol-unselectable ol-control">
     <button id="rotateControl" class="ol-rotate-reset" type="button" title="Reset rotation">
       <span class="ol-compass">⇧</span>
@@ -74,19 +74,22 @@
 
   // })
 
+  var view = new ol.View({
+    center: ol.proj.transform([116.027, 28.683], 'EPSG:4326', 'EPSG:3857'),
+    zoom: 15,
+    rotation: 0,
+  });
+
   var map = new ol.Map({
     target: 'mf',
     layers: [
       google_img,
       TiandiMap_cia,
     ],
-    view: new ol.View({
-      center: ol.proj.transform([116.027, 28.683], 'EPSG:4326', 'EPSG:3857'),
-      zoom: 15,
-    }),
-    
+    view: view
   });
 
+  
   // var rotateControl = new ol.control.Rotate({
   //   autoHide: 0, // 是否自动隐藏控件
   //   // target: 'rotateControl',
@@ -94,12 +97,12 @@
   // });
   // map.addControl(rotateControl);
 
-  var rotateControl = new ol.control.ZoomSlider({
-    // autoHide: 0, // 是否自动隐藏控件
-    // // target: 'rotateControl',
-    // tipLabel: "重置旋转"
-  });
-  map.addControl(rotateControl);
+  // var rotateControl = new ol.control.ZoomSlider({
+  //   // autoHide: 0, // 是否自动隐藏控件
+  //   // // target: 'rotateControl',
+  //   // tipLabel: "重置旋转"
+  // });
+  // map.addControl(rotateControl);
 
 </script>
 </head>
